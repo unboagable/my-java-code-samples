@@ -47,5 +47,9 @@ public class TestArraysnStrings {
 		assertTrue("lameness, nameless is anagram", ArraysnStrings.isAnagram("lameness", "nameless"));
 		assertTrue("painter, pertain is anagram", ArraysnStrings.isAnagram("painter", "pertain"));
 	}
-
+	
+	@Test
+	public void testPalindromePairs(){
+		//palindromePairs(String[] words)
+	}
 }
