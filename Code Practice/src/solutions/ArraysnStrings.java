@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class ArraysnStrings {
 	
-	//P1.1
+	//ctci:P1.1
 	public static Boolean isUnique(String input){
 		Set<Character> seenCharacters = new HashSet<Character>();
 		for (char ch: input.toCharArray()){
@@ -22,7 +22,7 @@ public class ArraysnStrings {
 		return true;
 	}
 	
-	//P1.1
+	//ctci:P1.1
 	public static Boolean isUniqueWOAddStructs(String input){
 		int slen = input.length();
 		char[] inputCA =input.toCharArray();
@@ -38,7 +38,7 @@ public class ArraysnStrings {
 		return true;
 	}
 	
-	//P1.2
+	//ctci:P1.2
 	public static String reverseString(String input){
 		char[] inputCharA = input.toCharArray();
 		int length = input.length();
@@ -61,7 +61,7 @@ public class ArraysnStrings {
 		}
 	} 
 	
-	//P1.3
+	//ctci:P1.3
 	public static void removeDuplicates(char[] str) {
 		int i=0;
 		int j;
@@ -78,7 +78,7 @@ public class ArraysnStrings {
 		}
 	}
 	
-	//P1.4
+	//ctci:P1.4
 	public static boolean isAnagram(String str1, String str2){
 		Map <Character,Integer> let2char = new HashMap<Character,Integer>(); //letter to character
 

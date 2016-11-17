@@ -1,6 +1,7 @@
 package solutions;
 
 public class BitManipulation {
+	
 	public static int bitsRequiredToConvert(int A, int B){
 		String bitA=Integer.toBinaryString(A);
 		String bitB=Integer.toBinaryString(B);

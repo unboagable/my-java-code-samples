@@ -4,7 +4,7 @@ import structures.Node;
 
 public class LinkedList {
 	
-	//P2.1
+	//ctci:P2.1
 	public static Node removeDuplicates(Node head){
 		Node n = head;
 		int ndata;
@@ -17,7 +17,7 @@ public class LinkedList {
 		return head;
 	}
 	
-	//P2.2
+	//ctci:P2.2
 	public static Node findNthLastElement(Node head, int nth){
 		Node n = head;
 		int nf=0;
@@ -35,14 +35,14 @@ public class LinkedList {
 		return n;
 	}
 	
-	//P2.3
+	//ctci:P2.3
 	public static void deleteMiddleNode(Node middle){
 		Node next=middle.getNext();
 		middle.setData(next.getData());
 		middle.setNext(next.getNext());
 	}
 	
-	//P2.4
+	//ctci:P2.4
 	public static Node addLL(Node left, Node right){
 		if (left == null){ return right;}
 		else if (right == null){return left;}
