@@ -1,7 +1,7 @@
 package solutions;
 
 public class BitManipulation {
-	
+	//ctci:P5.5
 	public static int bitsRequiredToConvert(int A, int B){
 		String bitA=Integer.toBinaryString(A);
 		String bitB=Integer.toBinaryString(B);
@@ -33,4 +33,19 @@ public class BitManipulation {
 			return switchCount;
 		}
 	}
+	
+	public static int bitsRequiredToConvert2(int a, int b){
+		int c=0;
+		for(int i=0; i<32;i++){
+			if(!isEq(a,b,i)){
+				c++;
+			}
+		}
+		return c;
+	}
+	
+	public static boolean isEq(int a, int b, int p){
+		return ((a>>p)&1)==((b>>p)&1);
+	}
+	
 }

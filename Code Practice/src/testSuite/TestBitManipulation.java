@@ -13,5 +13,12 @@ public class TestBitManipulation {
 		assertEquals("BitManipulation.bitsRequiredToConvert(1,2)=2", 2, BitManipulation.bitsRequiredToConvert(1,2));
 		assertEquals("BitManipulation.bitsRequiredToConvert(18,18)=0", 0, BitManipulation.bitsRequiredToConvert(18,18));
 	}
+	
+	@Test
+	public void testbitsRequiredToConvert2() {
+		assertEquals("BitManipulation.bitsRequiredToConvert2(31,14)=2", 2, BitManipulation.bitsRequiredToConvert2(31,14));
+		assertEquals("BitManipulation.bitsRequiredToConvert2(1,2)=2", 2, BitManipulation.bitsRequiredToConvert2(1,2));
+		assertEquals("BitManipulation.bitsRequiredToConvert2(18,18)=0", 0, BitManipulation.bitsRequiredToConvert2(18,18));
+	}
 
 }

@@ -1,31 +1,31 @@
 package structures;
 
 //Linked list node
-public class Node {
-	Node next = null;
+public class LLNode {
+	LLNode next = null;
 	int data;
 	
-	public Node(int d) { data = d; }
+	public LLNode(int d) { data = d; }
 	
-	public static Node linkedListFromArray(int[] da) {
-		Node head = new Node(da[0]);
-		Node n=head;
+	public static LLNode linkedListFromArray(int[] da) {
+		LLNode head = new LLNode(da[0]);
+		LLNode n=head;
 		for(int i=1; i < da.length;i++){
-			n.next=new Node(da[i]);
+			n.next=new LLNode(da[i]);
 			n=n.next;
 		}
 		return head;
 	}
 	
 	public void appendToTail(int d) {
-		Node end = new Node(d);
-		Node n = this;
+		LLNode end = new LLNode(d);
+		LLNode n = this;
 		while (n.next != null) { n = n.next; }
 		n.next = end;
 	}
 	
-	public static Node deleteNode(Node head, int d) {
-		Node n = head;
+	public static LLNode deleteNode(LLNode head, int d) {
+		LLNode n = head;
 		if (n.data == d) {
 			return head.next; /* moved head */
 		}
@@ -36,13 +36,13 @@ public class Node {
 			}
 			n = n.next;
 		}
-		return head; /* head didn’t change */
+		return head; /* head didnï¿½t change */
 	}
 	
 	public void printLinkedList(){
 		System.out.print("LL: ");
 		System.out.print(this.data);
-		Node n = this;
+		LLNode n = this;
 		while (n.next != null) {
 			n = n.next;
 			System.out.print("->");
@@ -59,11 +59,11 @@ public class Node {
 		this.data=data2;
 	}
 
-	public Node getNext() {
+	public LLNode getNext() {
 		return this.next;
 	}
 
-	public void setNext(Node next2) {
+	public void setNext(LLNode next2) {
 		this.next=next2;
 	}
 }

@@ -2,12 +2,12 @@ package structures;
 
 //P3.2
 public class MinStack extends LocalStack{
-	Node min;
+	LLNode min;
 	int minData;
 	
 	@Override
-	Node pop(){
-		Node toReturn=super.pop();
+	LLNode pop(){
+		LLNode toReturn=super.pop();
 		if (toReturn == min){
 			updateMin();
 		}
@@ -20,7 +20,7 @@ public class MinStack extends LocalStack{
 		}else{
 			min=this.top;
 			minData=this.top.getData();
-			Node n = this.top;
+			LLNode n = this.top;
 			while(n.next != null){
 				n=n.next;
 				if (n.getData() < minData){
