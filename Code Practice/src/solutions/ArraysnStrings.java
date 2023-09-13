@@ -25,12 +25,9 @@ public class ArraysnStrings {
 	//ctci:P1.1
 	public static Boolean isUniqueWOAddStructs(String input){
 		int slen = input.length();
-		char[] inputCA =input.toCharArray();
-		char cchar;
 		for (int i=0; i < slen-1; i++ ){
-			cchar=inputCA[i];
 			for (int j=i+1; j < slen; j++){
-				if (cchar == inputCA[j]){
+				if (input.charAt(i) == input.charAt(j)){
 					return false;
 				}
 			}
