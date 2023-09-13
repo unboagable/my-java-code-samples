@@ -16,6 +16,7 @@ public class LinkedList {
 		}
 		return head;
 	}
+
 	
 	//ctci:P2.2
 	public static LLNode findNthLastElement(LLNode head, int nth){
