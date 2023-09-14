@@ -10,14 +10,14 @@ public class TestArraysnStrings {
 
 	@Test
 	public void testisUnique() {
-		assertEquals("'hi' must be true", true, ArraysnStrings.isUnique("hi"));
-		assertEquals("'hih' must be false", false, ArraysnStrings.isUnique("hih"));
+		assertTrue("'hi' must be true", ArraysnStrings.isUnique("hi"));
+		assertFalse("'hih' must be false", ArraysnStrings.isUnique("hih"));
 	}
 	
 	@Test
 	public void testisUniqueWOAddStructs() {
-		assertEquals("'hi' must be true", true, ArraysnStrings.isUniqueWOAddStructs("hi"));
-		assertEquals("'hih' must be false", false, ArraysnStrings.isUniqueWOAddStructs("hih"));
+		assertTrue("'hi' must be true", ArraysnStrings.isUniqueWOAddStructs("hi"));
+		assertFalse("'hih' must be false", ArraysnStrings.isUniqueWOAddStructs("hih"));
 	}
 	
 	@Test

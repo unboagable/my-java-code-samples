@@ -1,13 +1,13 @@
 package structures;
 
 public class LocalStack {
-	LLNode top;
+	LinkedListNode top;
 	
 	public LocalStack() {}
 	
-	LLNode pop(){
+	LinkedListNode pop(){
 		if (top != null){
-			LLNode item=top;
+			LinkedListNode item=top;
 			top=top.getNext();
 			return item;
 		}
@@ -15,7 +15,7 @@ public class LocalStack {
 	}
 	
 	void push(int item){
-		LLNode t = new LLNode(item);
+		LinkedListNode t = new LinkedListNode(item);
 		t.next = top;
 		top=t;
 	}

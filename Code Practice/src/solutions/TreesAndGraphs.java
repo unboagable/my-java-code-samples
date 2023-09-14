@@ -6,11 +6,41 @@ import structures.BinaryTreeNode;
 
 public class TreesAndGraphs {
 	static Random random = new Random();
-	// p4.6 Design an algorithm and write code to find the first common ancestor of two nodes
-	// in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
-	// necessarily a binary search tree.
 
-	//preorder-traversal (left and right first) compare lists
+	//ctci:P2.1
+	public static boolean isBalanced(BinaryTreeNode root) {
+		return isBalancedRecursive(root) >= 0;
+	}
+	
+	private static int isBalancedRecursive(BinaryTreeNode root) {
+		if(root == null) { 
+			return 0;
+		}
+		
+		if(root.left == null && root.right == null) {  //leaf
+			return 1;
+		}
+		
+		if(root.left == null) {
+			if(isBalancedRecursive(root.right) == 1) { //right is leaf
+				return 2;
+			}
+			return -1;
+		}
+		
+		if(root.right == null) {
+			if(isBalancedRecursive(root.left) == 1) { //left is leaf
+				return 2;
+			}
+			return -1;
+		}
+		int left = isBalancedRecursive(root.left);
+		int right = isBalancedRecursive(root.right);
+		if(left == -1 || right == -1 || Integer.max(left-right, right-left)>1) {
+			return -1;
+		}
+		return 1+Integer.max(left, right);
+	}
 	
 	//ctci:P4.3
 	public static BinaryTreeNode makeTree(int[] num){
@@ -50,6 +80,12 @@ public class TreesAndGraphs {
 		return r;
 		
 	}
+	
+	// p4.6 Design an algorithm and write code to find the first common ancestor of two nodes
+	// in a binary tree. Avoid storing additional nodes in a data structure. NOTE: This is not
+	// necessarily a binary search tree.
+
+	//preorder-traversal (left and right first) compare lists
 	
 	
 }

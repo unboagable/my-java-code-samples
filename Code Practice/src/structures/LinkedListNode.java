@@ -1,31 +1,35 @@
 package structures;
 
 //Linked list node
-public class LLNode {
-	LLNode next = null;
+public class LinkedListNode {
+	LinkedListNode next = null;
 	int data;
 	
-	public LLNode(int d) { data = d; }
+	public LinkedListNode(int d) { data = d; }
 	
-	public static LLNode linkedListFromArray(int[] da) {
-		LLNode head = new LLNode(da[0]);
-		LLNode n=head;
+	public static LinkedListNode linkedListFromArray(int[] da) {
+		if (da == null || da.length == 0) {
+			return null;
+		}
+		
+		LinkedListNode head = new LinkedListNode(da[0]);
+		LinkedListNode n=head;
 		for(int i=1; i < da.length;i++){
-			n.next=new LLNode(da[i]);
+			n.next=new LinkedListNode(da[i]);
 			n=n.next;
 		}
 		return head;
 	}
 	
 	public void appendToTail(int d) {
-		LLNode end = new LLNode(d);
-		LLNode n = this;
+		LinkedListNode end = new LinkedListNode(d);
+		LinkedListNode n = this;
 		while (n.next != null) { n = n.next; }
 		n.next = end;
 	}
 	
-	public static LLNode deleteNode(LLNode head, int d) {
-		LLNode n = head;
+	public static LinkedListNode deleteNode(LinkedListNode head, int d) {
+		LinkedListNode n = head;
 		if (n.data == d) {
 			return head.next; /* moved head */
 		}
@@ -42,7 +46,7 @@ public class LLNode {
 	public void printLinkedList(){
 		System.out.print("LL: ");
 		System.out.print(this.data);
-		LLNode n = this;
+		LinkedListNode n = this;
 		while (n.next != null) {
 			n = n.next;
 			System.out.print("->");
@@ -59,11 +63,11 @@ public class LLNode {
 		this.data=data2;
 	}
 
-	public LLNode getNext() {
+	public LinkedListNode getNext() {
 		return this.next;
 	}
 
-	public void setNext(LLNode next2) {
+	public void setNext(LinkedListNode next2) {
 		this.next=next2;
 	}
 }

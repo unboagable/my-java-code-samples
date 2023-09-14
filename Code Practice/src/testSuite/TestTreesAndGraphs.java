@@ -1,5 +1,7 @@
 package testSuite;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -10,9 +12,27 @@ import solutions.TreesAndGraphs;
 import structures.BinaryTreeNode;
 
 public class TestTreesAndGraphs {
-
+	
 	@Test
-	public void test() {
+	public void testisBalanced() {
+		BinaryTreeNode unbal = new BinaryTreeNode(5);
+		unbal.left = new BinaryTreeNode(3);
+		unbal.left.left = new BinaryTreeNode(2);
+		unbal.left.right = new BinaryTreeNode(4);
+		BTreePrinter.printNode(unbal);
+		assertEquals("unbal must be false", false, TreesAndGraphs.isBalanced(unbal));
+		BinaryTreeNode bal = new BinaryTreeNode(5);
+		bal.left = new BinaryTreeNode(3);
+		bal.left.left = new BinaryTreeNode(2);
+		bal.left.right = new BinaryTreeNode(4);
+		bal.right = new BinaryTreeNode(7);
+		bal.right.right = new BinaryTreeNode(8);
+		BTreePrinter.printNode(bal);
+		assertEquals("bal must be true", true, TreesAndGraphs.isBalanced(bal));
+	}
+	
+	@Test
+	public void testmakeTree() {
 		int[] num = {1,2,3,4,5,6,7};
 		BTreePrinter.printNode(TreesAndGraphs.makeTree(num));
 	}

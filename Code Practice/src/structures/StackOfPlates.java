@@ -12,17 +12,17 @@ public class StackOfPlates extends LocalStack{
 	int currentStackSize;
 	
 	@Override
-	LLNode pop(){
+	LinkedListNode pop(){
 		if (currentStack != null){ 
 			if (currentStack.top != null){
-				LLNode item=currentStack.top;
+				LinkedListNode item=currentStack.top;
 				currentStack.top=currentStack.top.getNext();
 				currentStackSize--;
 				return item;
 			}else if (currentStackIndex != 0){
 				currentStackIndex--;
 				currentStack= toStack.get(currentStackIndex);
-				LLNode item=currentStack.top;
+				LinkedListNode item=currentStack.top;
 				currentStack.top=currentStack.top.getNext();
 				currentStackSize=maxElements-1;
 				return item;

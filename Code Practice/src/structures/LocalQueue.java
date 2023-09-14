@@ -1,20 +1,20 @@
 package structures;
 
 public class LocalQueue {
-	LLNode first, last;
+	LinkedListNode first, last;
 	void enqueue(int item){
 		if (first == null){
-			last = new LLNode(item);
+			last = new LinkedListNode(item);
 			first=last;
 		}else{
-			last.setNext(new LLNode(item));
+			last.setNext(new LinkedListNode(item));
 			last=last.next;
 		}
 	}
 	
-	LLNode dequeue(LLNode n){
+	LinkedListNode dequeue(LinkedListNode n){
 		if (first != null){
-			LLNode item=first;
+			LinkedListNode item=first;
 			first = first.getNext();
 			return item;
 		}

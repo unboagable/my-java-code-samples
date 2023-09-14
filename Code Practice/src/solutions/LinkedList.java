@@ -1,26 +1,25 @@
 package solutions;
 
-import structures.LLNode;
+import structures.LinkedListNode;
 
 public class LinkedList {
 	
 	//ctci:P2.1
-	public static LLNode removeDuplicates(LLNode head){
-		LLNode n = head;
+	public static LinkedListNode removeDuplicates(LinkedListNode head){
+		LinkedListNode n = head;
 		int ndata;
 		while (n.getNext() != null) {
 			ndata=n.getData();
-			n.setNext(LLNode.deleteNode(n.getNext(),ndata));
+			n.setNext(LinkedListNode.deleteNode(n.getNext(),ndata));
 			n = n.getNext();
 			if (n == null){return head;}
 		}
 		return head;
 	}
-
 	
 	//ctci:P2.2
-	public static LLNode findNthLastElement(LLNode head, int nth){
-		LLNode n = head;
+	public static LinkedListNode findNthLastElement(LinkedListNode head, int nth){
+		LinkedListNode n = head;
 		int nf=0;
 		while (n.getNext() != null) {
 			n = n.getNext();
@@ -37,22 +36,22 @@ public class LinkedList {
 	}
 	
 	//ctci:P2.3
-	public static void deleteMiddleNode(LLNode middle){
-		LLNode next=middle.getNext();
+	public static void deleteMiddleNode(LinkedListNode middle){
+		LinkedListNode next=middle.getNext();
 		middle.setData(next.getData());
 		middle.setNext(next.getNext());
 	}
 	
 	//ctci:P2.4
-	public static LLNode addLL(LLNode left, LLNode right){
+	public static LinkedListNode addLL(LinkedListNode left, LinkedListNode right){
 		if (left == null){ return right;}
 		else if (right == null){return left;}
 		else{
-			LLNode cleft=left.getNext();
-			LLNode cright=right.getNext();
+			LinkedListNode cleft=left.getNext();
+			LinkedListNode cright=right.getNext();
 			int resultdata = left.getData() + right.getData();
-			LLNode result=new LLNode(resultdata % 10);
-			LLNode cresult=result;
+			LinkedListNode result=new LinkedListNode(resultdata % 10);
+			LinkedListNode cresult=result;
 			resultdata /= 10;
 			while (cleft != null && cright != null){
 				resultdata+=cleft.getData()+cright.getData();
