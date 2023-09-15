@@ -1,6 +1,6 @@
 package testSuite;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import solutions.TreesAndGraphs;
 import structures.BinaryTreeNode;
+import structures.LinkedListNode;
 
 public class TestTreesAndGraphs {
 	
@@ -20,7 +21,7 @@ public class TestTreesAndGraphs {
 		unbal.left.left = new BinaryTreeNode(2);
 		unbal.left.right = new BinaryTreeNode(4);
 		BTreePrinter.printNode(unbal);
-		assertEquals("unbal must be false", false, TreesAndGraphs.isBalanced(unbal));
+		assertFalse("unbal must be false", TreesAndGraphs.isBalanced(unbal));
 		BinaryTreeNode bal = new BinaryTreeNode(5);
 		bal.left = new BinaryTreeNode(3);
 		bal.left.left = new BinaryTreeNode(2);
@@ -28,13 +29,39 @@ public class TestTreesAndGraphs {
 		bal.right = new BinaryTreeNode(7);
 		bal.right.right = new BinaryTreeNode(8);
 		BTreePrinter.printNode(bal);
-		assertEquals("bal must be true", true, TreesAndGraphs.isBalanced(bal));
+		assertTrue("bal must be true", TreesAndGraphs.isBalanced(bal));
 	}
 	
 	@Test
 	public void testmakeTree() {
 		int[] num = {1,2,3,4,5,6,7};
 		BTreePrinter.printNode(TreesAndGraphs.makeTree(num));
+	}
+	
+	@Test
+	public void testlinkedListPerDepth() {
+		BinaryTreeNode bal = new BinaryTreeNode(5);
+		bal.left = new BinaryTreeNode(3);
+		bal.left.left = new BinaryTreeNode(2);
+		bal.left.right = new BinaryTreeNode(4);
+		bal.right = new BinaryTreeNode(7);
+		bal.right.right = new BinaryTreeNode(8);
+		LinkedListNode[] llpd = TreesAndGraphs.linkedListPerDepth(bal);
+		assertNotNull("llpd not null",llpd);
+		assertEquals("llpd must have 3 linked lists", 3, llpd.length);
+		assertNotNull("1st linked list not null",llpd[0]);
+		assertEquals("1st element in 1st linked list is 5", 5, llpd[0].getData());
+		
+		assertNotNull("2nd linked list not null",llpd[1]);
+		LinkedListNode ll = llpd[1];
+		boolean isSeven = false;
+		boolean isThree = false;
+		while(ll != null) {
+			if(ll.getData() == 7) {isSeven = true;}
+			if(ll.getData() == 3) {isThree = true;}
+			ll=ll.getNext();
+		}
+		assertTrue("2nd linked list contains 5 and 7", isSeven && isThree);
 	}
 
 }

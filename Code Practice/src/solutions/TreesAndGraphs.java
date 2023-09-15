@@ -1,8 +1,10 @@
 package solutions;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import structures.BinaryTreeNode;
+import structures.LinkedListNode;
 
 public class TreesAndGraphs {
 	static Random random = new Random();
@@ -53,7 +55,7 @@ public class TreesAndGraphs {
 	}
 	
 	//s inclusive, e exclusive
-	static BinaryTreeNode makeTreeRecursive(int[] num, int s, int e){
+	private static BinaryTreeNode makeTreeRecursive(int[] num, int s, int e){
 		if(e-s == 0){
 			return null;
 		}else if (e-s == 1){
@@ -79,6 +81,41 @@ public class TreesAndGraphs {
 		
 		return r;
 		
+	}
+	
+	//ctci:4.4
+	public static LinkedListNode[] linkedListPerDepth(BinaryTreeNode bst){
+		if(bst == null) {
+			return new LinkedListNode[0];
+		}
+		ArrayList<LinkedListNode> arr=new ArrayList<LinkedListNode>();
+		arr = linkedListPerDepthRecursive(bst, arr, 1);
+		
+		LinkedListNode[] sol = new LinkedListNode[arr.size()];
+		return arr.toArray(sol);
+	}
+	
+	private static ArrayList<LinkedListNode> linkedListPerDepthRecursive(
+			BinaryTreeNode bst, ArrayList<LinkedListNode> arr, int d){
+		if (bst == null) {
+			return arr;
+		}
+		
+		if(arr.size() < d) {
+			arr.add(new LinkedListNode(bst.val));
+		}else{
+			arr.get(d-1).appendToTail(bst.val);
+		}
+		
+		if(bst.left != null) {
+			arr = linkedListPerDepthRecursive(bst.left, arr, d+1);
+		}
+		
+		if(bst.right != null) {
+			arr = linkedListPerDepthRecursive(bst.right, arr, d+1);
+		}
+		
+		return arr;
 	}
 	
 	// p4.6 Design an algorithm and write code to find the first common ancestor of two nodes

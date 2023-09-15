@@ -40,7 +40,7 @@ public class LinkedListNode {
 			}
 			n = n.next;
 		}
-		return head; /* head didn�t change */
+		return head; /* head didn't change */
 	}
 	
 	public void printLinkedList(){
