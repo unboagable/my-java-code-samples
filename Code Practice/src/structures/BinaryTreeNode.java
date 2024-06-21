@@ -21,16 +21,19 @@ public class BinaryTreeNode {
 		data=input;
 	}
 	
-	public BinaryTreeNode BinaryTreeNode(int x, Object input, int size, List<Object> others){
-		val=x;
-		if (size == 0) {
-			return null;
-		}else if (size == 1) {
-			return new BinaryTreeNode(x, input);
-		}
+	public BinaryTreeNode(int index, Object input, int size, List<Object> others){ // ?
+		val=index;
 		left=null;
 		right=null;
+		if (size == 0) {
+			return;
+		}else if (size == 1) {
+			return;
+		}else if (size == 2) {// ?
+			left= new BinaryTreeNode(index, input); //others 0 ?
+			return;
+		}
 		data=input;
-		return null;
+		return;
 	}
 }
