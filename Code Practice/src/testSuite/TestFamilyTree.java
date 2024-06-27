@@ -31,5 +31,10 @@ public class TestFamilyTree {
 		assertNull(mbuguss.right);
 		System.out.println("Chang-Hyun says do my homework between here ?!?!?!");
 	}
+	
+	@Test
+	public void testShosho() {
+		System.out.println("Shosho says chiefs and fighters ");
+	}
 
 }
