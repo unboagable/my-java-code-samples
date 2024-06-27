@@ -21,7 +21,9 @@ public class TestTreesAndGraphs {
 		unbal.left.left = new BinaryTreeNode(2);
 		unbal.left.right = new BinaryTreeNode(4);
 		BTreePrinter.printNode(unbal);
+		
 		assertFalse("unbal must be false", TreesAndGraphs.isBalanced(unbal));
+		
 		BinaryTreeNode bal = new BinaryTreeNode(5);
 		bal.left = new BinaryTreeNode(3);
 		bal.left.left = new BinaryTreeNode(2);
