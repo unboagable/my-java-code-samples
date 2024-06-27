@@ -28,9 +28,18 @@ public class BinaryTreeNode {
 		if (size == 0) {
 			return;
 		}else if (size == 1) {
+			data = input;
 			return;
-		}else if (size == 2) {// ?
-			left= new BinaryTreeNode(index, input); //others 0 ?
+		}else if (size == 2) {// 2 node tree
+			left= new BinaryTreeNode(0, others.get(0));
+			data = others.get(1);
+			val=1;
+			return;
+		}else if (size == 3) {// 3 node tree
+			left= new BinaryTreeNode(0, others.get(0));
+			data = others.get(1);
+			val=1;
+			right= new BinaryTreeNode(2, others.get(2));
 			return;
 		}
 		data=input;
