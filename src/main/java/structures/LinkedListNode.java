@@ -2,8 +2,8 @@ package structures;
 
 //Linked list node
 public class LinkedListNode {
-	LinkedListNode next = null;
-	int data;
+	public LinkedListNode next = null;
+	public int data;
 	
 	public LinkedListNode(int d) { data = d; }
 	
@@ -53,21 +53,5 @@ public class LinkedListNode {
 			System.out.print(n.data);
 		}
 		System.out.println("->END");
-	}
-	
-	public int getData(){
-		return this.data;
-	}
-
-	public void setData(int data2) {
-		this.data=data2;
-	}
-
-	public LinkedListNode getNext() {
-		return this.next;
-	}
-
-	public void setNext(LinkedListNode next2) {
-		this.next=next2;
 	}
 }

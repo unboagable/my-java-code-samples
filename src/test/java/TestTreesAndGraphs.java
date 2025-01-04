@@ -1,5 +1,3 @@
-package testSuite;
-
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
@@ -52,16 +50,16 @@ public class TestTreesAndGraphs {
 		assertNotNull("llpd not null",llpd);
 		assertEquals("llpd must have 3 linked lists", 3, llpd.length);
 		assertNotNull("1st linked list not null",llpd[0]);
-		assertEquals("1st element in 1st linked list is 5", 5, llpd[0].getData());
+		assertEquals("1st element in 1st linked list is 5", 5, llpd[0].data);
 		
 		assertNotNull("2nd linked list not null",llpd[1]);
 		LinkedListNode ll = llpd[1];
 		boolean isSeven = false;
 		boolean isThree = false;
 		while(ll != null) {
-			if(ll.getData() == 7) {isSeven = true;}
-			if(ll.getData() == 3) {isThree = true;}
-			ll=ll.getNext();
+			if(ll.data == 7) {isSeven = true;}
+			if(ll.data == 3) {isThree = true;}
+			ll=ll.next;
 		}
 		assertTrue("2nd linked list contains 5 and 7", isSeven && isThree);
 	}

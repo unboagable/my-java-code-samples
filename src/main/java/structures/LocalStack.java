@@ -8,7 +8,7 @@ public class LocalStack {
 	LinkedListNode pop(){
 		if (top != null){
 			LinkedListNode item=top;
-			top=top.getNext();
+			top=top.next;
 			return item;
 		}
 		return null;

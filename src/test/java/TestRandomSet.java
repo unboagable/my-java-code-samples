@@ -1,6 +1,3 @@
-package testSuite;
-
-
 import org.junit.Test;
 
 import structures.RandomSet;

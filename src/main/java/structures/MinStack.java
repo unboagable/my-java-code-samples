@@ -16,16 +16,16 @@ public class MinStack extends LocalStack{
 
 	private void updateMin() {
 		if (this.top == null){
-			min=null;
+			min = null;
 		}else{
-			min=this.top;
-			minData=this.top.getData();
+			min = this.top;
+			minData = this.top.data;
 			LinkedListNode n = this.top;
 			while(n.next != null){
 				n=n.next;
-				if (n.getData() < minData){
+				if (n.data < minData){
 					min=n;
-					minData=n.getData();
+					minData=n.data;
 				}
 			}
 		}
@@ -37,14 +37,13 @@ public class MinStack extends LocalStack{
 		if (min == null){
 			super.push(item);
 			min=this.top;
-			minData=this.top.getData();
+			minData=this.top.data;
 		}else{
 			if (minData > item){
 				super.push(item);
 				min=this.top;
-				minData=this.top.getData();
+				minData=this.top.data;
 			}
 		}
 	}
-
 }

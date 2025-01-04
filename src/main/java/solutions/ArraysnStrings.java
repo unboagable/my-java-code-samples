@@ -12,6 +12,8 @@ public class ArraysnStrings {
 	
 	//ctci:P1.1
 	public static Boolean isUnique(String input){
+        if(input == null || input.isEmpty()){ return true;}
+
 		Set<Character> seenCharacters = new HashSet<Character>();
 		for (char ch: input.toCharArray()){
 			if (seenCharacters.contains(ch)){
@@ -24,7 +26,9 @@ public class ArraysnStrings {
 	
 	//ctci:P1.1
 	public static Boolean isUniqueWOAddStructs(String input){
-		int slen = input.length();
+        if(input == null || input.isEmpty()){ return true;}
+
+        int slen = input.length();
 		for (int i=0; i < slen-1; i++ ){
 			for (int j=i+1; j < slen; j++){
 				if (input.charAt(i) == input.charAt(j)){

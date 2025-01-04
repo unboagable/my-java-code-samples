@@ -8,10 +8,10 @@ public class LinkedList {
 	public static LinkedListNode removeDuplicates(LinkedListNode head){
 		LinkedListNode n = head;
 		int ndata;
-		while (n.getNext() != null) {
-			ndata=n.getData();
-			n.setNext(LinkedListNode.deleteNode(n.getNext(),ndata));
-			n = n.getNext();
+		while (n.next != null) {
+			ndata=n.data;
+			n.next=LinkedListNode.deleteNode(n.next,ndata);
+			n = n.next;
 			if (n == null){return head;}
 		}
 		return head;
@@ -21,8 +21,8 @@ public class LinkedList {
 	public static LinkedListNode findNthLastElement(LinkedListNode head, int nth){
 		LinkedListNode n = head;
 		int nf=0;
-		while (n.getNext() != null) {
-			n = n.getNext();
+		while (n.next != null) {
+			n = n.next;
 			nf++;
 		}
 		
@@ -30,16 +30,16 @@ public class LinkedList {
 		if (nth <= 0){return head;}
 		n = head;
 		for (int i=0; i<nth; i++) {
-			n = n.getNext();
+			n = n.next;
 		}
 		return n;
 	}
 	
 	//ctci:P2.3
 	public static void deleteMiddleNode(LinkedListNode middle){
-		LinkedListNode next=middle.getNext();
-		middle.setData(next.getData());
-		middle.setNext(next.getNext());
+		LinkedListNode next=middle.next;
+		middle.data=next.data;
+		middle.next =next.next;
 	}
 	
 	//ctci:P2.4
@@ -47,34 +47,34 @@ public class LinkedList {
 		if (left == null){ return right;}
 		else if (right == null){return left;}
 		else{
-			LinkedListNode cleft=left.getNext();
-			LinkedListNode cright=right.getNext();
-			int resultdata = left.getData() + right.getData();
+			LinkedListNode cleft=left.next;
+			LinkedListNode cright=right.next;
+			int resultdata = left.data + right.data;
 			LinkedListNode result=new LinkedListNode(resultdata % 10);
 			LinkedListNode cresult=result;
 			resultdata /= 10;
 			while (cleft != null && cright != null){
-				resultdata+=cleft.getData()+cright.getData();
+				resultdata+=cleft.data+cright.data;
 				cresult.appendToTail(resultdata%10);
-				cresult=cresult.getNext();
-				cleft=cleft.getNext();
-				cright=cright.getNext();
+				cresult=cresult.next;
+				cleft=cleft.next;
+				cright=cright.next;
 				resultdata /=10;
 			}
 			if (cleft != null){
 				while (cleft != null){
-					resultdata+=cleft.getData();
+					resultdata+=cleft.data;
 					cresult.appendToTail(resultdata%10);
-					cresult=cresult.getNext();
-					cleft=cleft.getNext();
+					cresult=cresult.next;
+					cleft=cleft.next;
 					resultdata /=10;
 				}
 			}else if (cright != null){
 				while (cright != null){
-					resultdata+=cright.getData();
+					resultdata+=cright.data;
 					cresult.appendToTail(resultdata%10);
-					cresult=cresult.getNext();
-					cright=cright.getNext();
+					cresult=cresult.next;
+					cright=cright.next;
 					resultdata /=10;
 				}
 			}

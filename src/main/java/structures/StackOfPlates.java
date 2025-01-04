@@ -16,14 +16,14 @@ public class StackOfPlates extends LocalStack{
 		if (currentStack != null){ 
 			if (currentStack.top != null){
 				LinkedListNode item=currentStack.top;
-				currentStack.top=currentStack.top.getNext();
+				currentStack.top=currentStack.top.next;
 				currentStackSize--;
 				return item;
 			}else if (currentStackIndex != 0){
 				currentStackIndex--;
 				currentStack= toStack.get(currentStackIndex);
 				LinkedListNode item=currentStack.top;
-				currentStack.top=currentStack.top.getNext();
+				currentStack.top=currentStack.top.next;
 				currentStackSize=maxElements-1;
 				return item;
 			}

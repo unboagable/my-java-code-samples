@@ -1,5 +1,3 @@
-package testSuite;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -38,7 +36,7 @@ public class TestLinkedList {
 		int[] lLIA={0,1,2,3,4,5};
 		LinkedListNode lL=LinkedListNode.linkedListFromArray(lLIA);
 		LinkedListNode thirdlast = LinkedList.findNthLastElement(lL, 3);
-		assertEquals("3rd last element is 2", 2, thirdlast.getData());
+		assertEquals("3rd last element is 2", 2, thirdlast.data);
 	}
 	
 	@Test
@@ -46,7 +44,7 @@ public class TestLinkedList {
 		int[] lLIA={0,1,2,3,4,5};
 		LinkedListNode lL=LinkedListNode.linkedListFromArray(lLIA);
 		lL.printLinkedList();
-		LinkedListNode middle=lL.getNext();
+		LinkedListNode middle=lL.next;
 		LinkedList.deleteMiddleNode(middle);
 		lL.printLinkedList();;
 	}

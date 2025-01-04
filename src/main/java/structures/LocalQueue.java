@@ -7,7 +7,7 @@ public class LocalQueue {
 			last = new LinkedListNode(item);
 			first=last;
 		}else{
-			last.setNext(new LinkedListNode(item));
+			last.next =new LinkedListNode(item);
 			last=last.next;
 		}
 	}
@@ -15,7 +15,7 @@ public class LocalQueue {
 	LinkedListNode dequeue(LinkedListNode n){
 		if (first != null){
 			LinkedListNode item=first;
-			first = first.getNext();
+			first = first.next;
 			return item;
 		}
 		return null;
