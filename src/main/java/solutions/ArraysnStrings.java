@@ -9,9 +9,9 @@ import java.util.Set;
 
 
 public class ArraysnStrings {
-	
-	//ctci:P1.1
-	public static Boolean isUnique(String input){
+
+    //ctci:P1.1
+    public static Boolean isUnique(String input){
         if(input == null || input.isEmpty()){ return true;}
 
         Set<Character> seenCharacters = new HashSet<Character>();
@@ -25,7 +25,7 @@ public class ArraysnStrings {
 	}
 	
 	//ctci:P1.1
-	public static Boolean isUniqueWOAddStructs(String input){
+    public static Boolean isUniqueWOAddStructs(String input){
         if(input == null || input.isEmpty()){ return true;}
 
         int slen = input.length();
