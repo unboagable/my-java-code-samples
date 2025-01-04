@@ -14,7 +14,7 @@ public class ArraysnStrings {
 	public static Boolean isUnique(String input){
         if(input == null || input.isEmpty()){ return true;}
 
-		Set<Character> seenCharacters = new HashSet<Character>();
+        Set<Character> seenCharacters = new HashSet<Character>();
 		for (char ch: input.toCharArray()){
 			if (seenCharacters.contains(ch)){
 				return false;
