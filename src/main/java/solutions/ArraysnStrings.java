@@ -29,14 +29,14 @@ public class ArraysnStrings {
         if(input == null || input.isEmpty()){ return true;}
 
         int slen = input.length();
-		for (int i=0; i < slen-1; i++ ){
-			for (int j=i+1; j < slen; j++){
-				if (input.charAt(i) == input.charAt(j)){
-					return false;
-				}
-			}
-		}
-		return true;
+        for (int i=0; i < slen-1; i++ ){
+            for (int j=i+1; j < slen; j++){
+                if (input.charAt(i) == input.charAt(j)){
+                    return false;
+                }
+            }
+        }
+        return true;
 	}
 	
 	//ctci:P1.2
