@@ -22,7 +22,7 @@ public class ArraysnStrings {
             seenCharacters.add(ch);
         }
         return true;
-	}
+    }
 	
 	//ctci:P1.1
     public static Boolean isUniqueWOAddStructs(String input){
