@@ -23,8 +23,8 @@ public class ArraysnStrings {
         }
         return true;
     }
-	
-	//ctci:P1.1
+
+    //ctci:P1.1
     public static Boolean isUniqueWOAddStructs(String input){
         if(input == null || input.isEmpty()){ return true;}
 
@@ -51,19 +51,19 @@ public class ArraysnStrings {
 		}
 		return String.valueOf(outputCharA);
     }
-	
-	//helper removeDuplicates
-	static void moveOneBack(char[] str, int i){
+
+    //helper removeDuplicates
+    static void moveOneBack(char[] str, int i){
 		char cc=str[i];
 		while (cc != '\0'){
 			str[i]=str[i+1];
 			i=i+1;
 			cc=str[i];
 		}
-	} 
-	
-	//ctci:P1.3
-	public static void removeDuplicates(char[] str) {
+	}
+
+    //ctci:P1.3
+    public static void removeDuplicates(char[] str) {
 		int i=0;
 		int j;
 		while(str[i]!= '\0'){
@@ -222,5 +222,4 @@ public class ArraysnStrings {
         }
         return sol;
     }
-	
 }
