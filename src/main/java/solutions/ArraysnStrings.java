@@ -15,13 +15,13 @@ public class ArraysnStrings {
         if(input == null || input.isEmpty()){ return true;}
 
         Set<Character> seenCharacters = new HashSet<Character>();
-		for (char ch: input.toCharArray()){
-			if (seenCharacters.contains(ch)){
-				return false;
-			}
-			seenCharacters.add(ch);
-		}
-		return true;
+        for (char ch: input.toCharArray()){
+            if (seenCharacters.contains(ch)){
+                return false;
+            }
+            seenCharacters.add(ch);
+        }
+        return true;
 	}
 	
 	//ctci:P1.1
