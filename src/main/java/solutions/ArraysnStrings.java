@@ -37,10 +37,10 @@ public class ArraysnStrings {
             }
         }
         return true;
-	}
-	
-	//ctci:P1.2
-	public static String reverseString(String input){
+    }
+
+    //ctci:P1.2
+    public static String reverseString(String input){
 		char[] inputCharA = input.toCharArray();
 		int length = input.length();
 		char[] outputCharA = new char[length];
@@ -50,7 +50,7 @@ public class ArraysnStrings {
 			outputCharA[i]=inputCharA[j];
 		}
 		return String.valueOf(outputCharA);
-	}
+    }
 	
 	//helper removeDuplicates
 	static void moveOneBack(char[] str, int i){
